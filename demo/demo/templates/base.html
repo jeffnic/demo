@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}"
+        type="image/x-icon">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        {% block head_css %}{% endblock %}
+        {% block head_javascript %}{% endblock %}
+    </head>
+    <body>
+
+        {% block navbar %}
+        {% include 'demo/navbar.html' %}
+    {% endblock %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content.
+            Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="/demo" role="button">Demo &raquo;</a></p>
+      </div>
+    </div>
+    {% block navbar2 %}
+        {% include 'demo/navbar2.html' %}
+     {% endblock %}
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <!--<div class="row">-->
+        <!--<div class="col-md-4">-->
+          <!--<h2>Lab Hardware</h2>-->
+            <!--<p>Interested in checking out what's available or reserving a specific piece of hardware?  Head over here</p>-->
+          <!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.-->
+              <!--Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        <!--</div>-->
+        <!--<div class="col-md-4">-->
+          <!--<h2>Lab Information</h2>-->
+            <!--<p>If you'd like more information on lab networks, how to get access etc, visit this area.</p>-->
+          <!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.-->
+              <!--Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+       <!--</div>-->
+        <!--<div class="col-md-4">-->
+          <!--<h2>Automation Request</h2>-->
+          <!--<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.-->
+              <!--Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>-->
+          <!--<p><a class="btn btn-default" href="#" role="button">Make Request &raquo;</a></p>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <hr>
+        {% block content %}
+        {% endblock %}
+
+      <footer>
+        <p>&copy; Company 2017</p>
+      </footer>
+    </div> <!-- /container -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+        {% block javascript %}{% endblock %}
+
+
+    </body>
+</html>
